@@ -1,12 +1,12 @@
 <h1 align="center">The Great Python Tool </h1>
 
 &rarr; __Description__ 
-* A script that crypt and decrypt all specific folder content with password, after a login screen, that check in a remote database
+* A script that crypt and decrypt all files of specific folder with password, after a login screen, that check in a remote database
 
 &rarr; __Usage__ 
 * Configure the full path on .py file first
-* ```python script.py -crypt -password abcdef```
-* ```python script.py -decrypt -password abcdef```
+* ```python tool.py -crypt -password abcdef```
+* ```python tool.py -decrypt -password abcdef```
 
 &rarr; __Database__ 
 * Address: us-cdbr-east-03.cleardb.com
