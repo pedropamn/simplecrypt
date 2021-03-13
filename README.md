@@ -5,8 +5,7 @@
 
 &rarr; __Usage__ 
 * Configure the full path on .py file first
-* ```python tool.py -crypt -password abcdef```
-* ```python tool.py -decrypt -password abcdef```
+* ```python tool.py```
 
 &rarr; __Database__ 
 * Address: us-cdbr-east-03.cleardb.com
