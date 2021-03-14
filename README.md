@@ -6,6 +6,7 @@
 &rarr; __Usage__ 
 * Configurable crypt folder on .py file (optional)
 * ```python tool.py```
+* Default credentials: username = user and password = pass
 
 &rarr; __Database__ 
 * Address: us-cdbr-east-03.cleardb.com
