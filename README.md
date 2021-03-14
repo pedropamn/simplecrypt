@@ -4,7 +4,7 @@
 * A script that crypt and decrypt all files of specific folder with password, after a login screen, that check in a remote database
 
 &rarr; __Usage__ 
-* Configure the full path on .py file first
+* Configurable crypt folder on .py file (optional)
 * ```python tool.py```
 
 &rarr; __Database__ 
