@@ -12,6 +12,7 @@ by @pedropamn and @alcantaralbeatriz
 
 path = "C:/crypt_this_folder"
 import os
+password_crypt = 'testing'
 
 #Create path if not exists
 def create_folder_if_not_exists(path):
@@ -28,13 +29,52 @@ def create_folder_if_not_exists(path):
 
 	
 #Crypt Function
-def crypt(file, password):
-	print("Nothing here...")
+def crypt(password):
+	import pyAesCrypt
+	
+	files = os.listdir(path)
+	
+	for f in files:
+		#get file extension
+		filename = os.path.splitext(f)[0]
+		extension = os.path.splitext(f)[1]
+		
+		
+		# encryption/decryption buffer size - 64K
+		bufferSize = 64 * 1024
+		
+		# encrypt
+		pyAesCrypt.encryptFile(path + "/" + filename + extension,path + "/" +  filename + extension + ".aes", password, bufferSize)
+		
+		#Delete original file
+		os.remove(path + "/" + filename + extension)
+	
 
 
 #Decrypt Function
-def decrypt(file, password):
-	print("Nothing here...")
+def decrypt(password):
+	import pyAesCrypt
+	
+	files = os.listdir(path)
+	
+	for f in files:
+		
+		#get file extension
+		filename = os.path.splitext(f)[0]
+		extension = os.path.splitext(f)[1] #At this point, .aes
+		
+		orig_ext = filename.split(".")[0]
+		
+		extension = os.path.splitext(f)[1] #.aes
+	
+		# encryption/decryption buffer size - 64K
+		bufferSize = 64 * 1024
+		
+		# encrypt
+		pyAesCrypt.decryptFile(path + "/" + filename + extension, path + "/" +  filename, password, bufferSize)
+
+		#Delete encrypted file
+		os.remove(path + "/" + filename + extension)
 
 #Get all files from folder
 def get_all_files_from_folder(path):
@@ -80,8 +120,11 @@ def main_screen():
 	print("Choose your option:")
 	print("[1] Crypt")
 	print("[2] Decrypt")
-	print("Success! But exiting...Not implemented yet")
-	
+	option = int(input('Option:'))
+	if option == 1:
+		crypt(password_crypt)
+	if option == 2:
+		decrypt(password_crypt)
 def main():	
 
 	#Everything start in login and register screen
