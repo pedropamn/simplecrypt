@@ -1,5 +1,9 @@
 <h1 align="center">Simple Crypt Tool </h1>
 
+<p align="center">
+  <img src="https://i2.paste.pics/b5522d91c384aea814e2680da4067d71.png?trs=ab5d135b7e6e342fe4664ea6a07c633b2714c968bb8fef32aa717ffe3ed74fc3" />
+</p>
+
 &rarr; __Description__ 
 * A simple program that encrypt and decrypt any file with password
 
