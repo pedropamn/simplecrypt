@@ -8,7 +8,7 @@
 * A simple program that encrypt and decrypt any file with password
 
 &rarr; __Usage__ 
-* Just run executables available in Releases Tab (Windows and Linux)
+* Just run executables available in [Releases section](https://github.com/pedropamn/simplecrypt/releases) (Windows and Linux)
 
 &rarr; __Contribute & Build__
 * You must install pyAesCrypt in order to script work. PyInstaller is a good option to create a build. You can install both via pip 
