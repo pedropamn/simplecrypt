@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>padlock.png</file>
+    <file>eye.png</file>
+  </qresource>
+</RCC>
