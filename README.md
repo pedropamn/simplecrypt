@@ -11,8 +11,12 @@
 * Just run executables available in [Releases section](https://github.com/pedropamn/simplecrypt/releases) (Windows and Linux)
 
 &rarr; __Contribute & Build__
-* If you are a developer and would like to contribute, you must install pyAesCrypt in order to script work. PyInstaller is a good option to create a build. You can install both via pip 
-(```pip install pyAesCrypt``` | ```pip install PyInstaller```)
+* If you are a developer and would like to contribute, install all dependencies in ```requeriments.txt```, via
+ 
+ ```pip install -r requeriments.txt```
+*  PyInstaller is a good option to create a .exe file. You can install it via pip 
+
+```pip install PyInstaller```
 * GUI is made entirely with PyQt5
 * The```start.py``` is the main file and ```simplecrypt.py``` is the script that encrypt and decrypt files.
 *  To create executable file, run ```pyinstaller --onefile --windowed --icon=padlock.ico start.py```
