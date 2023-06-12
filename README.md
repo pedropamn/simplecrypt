@@ -47,7 +47,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About the project
 
-SimpleCrypt is a simple program that encrypt and decrypt any file with password using AES256-CBC, via [PyAesCrypt](https://pypi.org/project/pyAesCrypt/). You can encrypt a file or a entire folder with a password and protect your important files!
+SimpleCrypt is a simple program that encrypt and decrypt any file with password using AES256-CBC, via [PyAesCrypt](https://pypi.org/project/pyAesCrypt/). You can encrypt a file or a entire folder with a password and protect your important ones!
 
 
 
