@@ -98,12 +98,19 @@ SimpleCrypt is a simple program that encrypt and decrypt any file with password 
 
 * If you are a developer and would like to contribute, install all dependencies in ```requeriments.txt```, via
  
- ```pip install -r requeriments.txt```
-*  PyInstaller is a good option to create a .exe file. You can install it via pip 
+    ```pip install -r requeriments.txt```
 
-```pip install PyInstaller```
-* GUI is made entirely with PyQt5 and Qt Designer
+* GUI is made entirely with PyQt5 and Qt Designer. You can edit the .ui files using it. After each change, remember to regenerate .py files. For example, after editing ```main.ui```:
+
+    ```pyuic5 -x main.ui -o main.py``` 
+ 
+    After it, comment the line ```#import resource_rc``` (it's already imported on ```start.py```)
+
 * The```start.py``` is the main file and ```simplecrypt.py``` is the script that encrypt and decrypt files.
+
+*  PyInstaller is a good option to create a executable files. You can install it via pip 
+
+    ```pip install PyInstaller```
 *  To create executable file, run ```pyinstaller --onefile --windowed --icon=padlock.ico start.py```
 
 To contribute with a Pull Request:
