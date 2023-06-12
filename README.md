@@ -24,7 +24,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="https://github.com/pedropamn/simplecrypt/blob/main/screen-simplecrypt.png?raw=true" width="50%" />
+  <img src="https://github.com/pedropamn/simplecrypt/blob/main/screen-simplecrypt.png?raw=true" width="60%" />
 
 
 
