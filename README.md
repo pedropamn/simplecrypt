@@ -102,7 +102,7 @@ SimpleCrypt is a simple program that encrypt and decrypt any file with password 
 *  PyInstaller is a good option to create a .exe file. You can install it via pip 
 
 ```pip install PyInstaller```
-* GUI is made entirely with PyQt5
+* GUI is made entirely with PyQt5 and Qt Designer
 * The```start.py``` is the main file and ```simplecrypt.py``` is the script that encrypt and decrypt files.
 *  To create executable file, run ```pyinstaller --onefile --windowed --icon=padlock.ico start.py```
 
