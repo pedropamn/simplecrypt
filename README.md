@@ -24,7 +24,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="https://cdn-icons-png.flaticon.com/512/595/595586.png" alt="Logo" width="180" height="180">
+  <img src="https://github.com/pedropamn/simplecrypt/blob/main/screen-simplecrypt.png?raw=true" width="50%" />
+
 
 
   <h1 align="center">SimpleCrypt</h1>
@@ -48,9 +49,7 @@
 
 SimpleCrypt is a simple program that encrypt and decrypt any file with password using AES256-CBC, via [PyAesCrypt](https://pypi.org/project/pyAesCrypt/). You can encrypt a file or a entire folder with a password and protect your important files!
 
-<div align="center">
-  <img src="https://github.com/pedropamn/simplecrypt/blob/main/screen-simplecrypt.png?raw=true" width="50%" />
-</div>
+
 
 <br><br>
 
