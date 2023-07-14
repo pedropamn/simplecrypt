@@ -83,7 +83,7 @@ SimpleCrypt is a simple program that encrypt and decrypt any file with password 
   - Tested on Windows 10 and Windows 11. Not tested on 8 and 8.1, but it should work too. Windows 7 is not compatible (should not work on earlier versions)
 
 * <img src="https://img.shields.io/badge/-Linux-green?style=for-the-badge&logo=linux&logoColor=white"></img>
-  - Tested and builded on Ubuntu 22.04.2. This system comes with glibc 2.35 and it was required by the executable when testing on other machines (Ubuntu 20.04 and Kali Linux 2021.4a). So, should work fine os system containing this library, for example:
+  - Tested and builded on Ubuntu 22.04.2. This system comes with glibc 2.35 and it was required by the executable when testing on other machines (Ubuntu 20.04 and Kali Linux 2021.4a). So, should work fine on system containing this library, for example:
     - Ubuntu 21.10+
     - Fedora 35+
     - Arch Linux (rolling release)
