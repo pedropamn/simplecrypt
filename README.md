@@ -73,6 +73,7 @@ SimpleCrypt is a simple program that encrypt and decrypt any file with password 
 
 
 - [ ] Make it Installable
+- [ ] Cloud Storage
 - [ ] Stats
 - [ ] CLI version
 - [ ] New Algorithms
