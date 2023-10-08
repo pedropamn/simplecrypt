@@ -1,4 +1,6 @@
 ﻿import sys
+from colorama import Fore, Style, init, Back
+init(autoreset=True)
 
 
 def checklib(lib):
@@ -11,8 +13,7 @@ def checklib(lib):
         #return False
         try:
             subprocess.check_call(["pip", "install", lib])
-            print("The lib" +lib+ "was installed successfully.")
-            import lib
+            print("The lib" +lib+ " was installed successfully.")
             return True
         except subprocess.CalledProcessError:
             print("Wasn't possible to install the lib " +lib+". Check your environment and try again mannualy.")
@@ -20,35 +21,35 @@ def checklib(lib):
            
 
 def print_help():
-    txt = r"""
+    
+   
+
+    
+    txt = fr"""
        
-     .--------.
-    / .------. \
-   / /        \ \
-   | |        | |
-  _| |________| |_
-.' |_|        |_| '.
-'._____ ____ _____.'
-|     .'____'.     |
-'.__.'.'    '.'.__.'
-'.__ SIMPLECRYPT   |
-|   '.'.____.'.'   |
-'.____'.____.'____.'
-'.________________.'
-                          
-https://github.com/pedropamn/simplecrypt
+                             .--------.
+                            / .------. \
+                           / /        \ \
+                           | |        | |
+                          _| |________| |_
+                        .' |_|        |_| '.
+                        '._____ ____ _____.'
+                        |     .'____'.     |
+                        '.__.'.'    '.'.__.'
+                        '.__ SIMPLECRYPT   |
+                        |   '.'. 2.0.'.'   |
+                        '.____'.____.'____.'
+                        '.________________.'
+                              
+                https://github.com/pedropamn/simplecrypt
 
     Usage: 
 
-    python simplecrypt-cli.py
+    For files:
+        {Fore.GREEN}python simplecrypt-cli.py [--encrypt | --decrypt] /path/to/file.ext{Style.RESET_ALL}
 
-    Select file via CLI
-    python simplecrypt-cli.py --encrypt /path/to/file.ext
-    python simplecrypt-cli.py --decrypt /path/to/file.ext
-
-    Select folder via CLI
-    python simplecrypt-cli.py --encrypt /path/to/folder/
-    python simplecrypt-cli.py --decrypt /path/to/folder/
+    For folders:
+        {Fore.GREEN}python simplecrypt-cli.py [--encrypt | --decrypt] /path/to/folder/{Style.RESET_ALL}
     """
     print(txt)
     
@@ -83,11 +84,11 @@ def crypt(password, fullfilepath, keepOriginal):
         else:
             #Get original extension
             original_ext = get_file_extension(fullfilepath) #returns '.txt, .doc, etc...'
-            print(original_ext)
+            #print(original_ext)
             
             #File path without extension
             file_path_without_ext = os.path.splitext(fullfilepath)[0]
-            print(file_path_without_ext)
+            #print(file_path_without_ext)
             
             #Put timestamp on file name to make it unique. If user keeps the original file and already have a 'file_encrypted.extension' on folder, it will overwrite it.
             timestamp = str(getTimestamp())
@@ -195,7 +196,7 @@ if check == True:
             password = getpass.getpass("Type the password: ")
             
             while True:
-                answer = input("Keep Original files? (Y/N): ").strip().upper()
+                answer = input("\n\nKeep Original file(s)? \nIf no, it will overwrite the file (be careful) (Y/N): ").strip().upper()
                 if answer in ("Y", "N"):
                     if answer == "Y":
                         keep_original = True
@@ -203,15 +204,15 @@ if check == True:
                         keep_original = False
                     break
                 else:
-                    print("Invalid answer. Please, type 'Y' or'N' ")
+                    print(f"{Fore.YELLOW}Invalid answer. Please, type 'Y' or'N' ")
             
             import os
             if os.path.isfile(fullpath):
                 freturn = crypt(password, fullpath, keep_original)
                 if freturn == True:
-                    print("File encrypted successfully!")
+                    print(Fore.GREEN+Back.YELLOW+Style.BRIGHT+"File encrypted successfully!")
                 else:
-                    print("Something went wrong. Check the path and file permissions")
+                    print(Fore.RED+Back.YELLOW+Style.BRIGHT+"Something went wrong. Check the path, password and file permissions")
             
             
             #It's a folder
@@ -222,7 +223,7 @@ if check == True:
                 #If 'isfile' fails, throw the 'else' (go here). So, if it's not a file, firstly check if the path to the supposed folder exists
                 if not os.path.exists(fullpath):
                     #It's not a file or folder
-                    print("This file or folder doesn't exists")
+                    print(Fore.RED+Back.YELLOW+Style.BRIGHT+"This file or folder doesn't exists")
 
                 else:
                     #Loop all folder content (will list subfolder, but will not enter on it. os.walk enter in subfolders) and run the crypt function on each file
@@ -230,7 +231,7 @@ if check == True:
                     
                     #Check if folder is empty
                     if folder_content == []:
-                        print("Folder is empty")
+                        print(Fore.RED+Back.YELLOW+Style.BRIGHT+"Folder is empty")
                     else:
                         #Loop
                         for item in folder_content:
@@ -248,7 +249,7 @@ if check == True:
                         
                         if len(error_list) == 0:                
                     
-                            print("All files were encrypted successfully!")
+                            print(Fore.GREEN+Back.YELLOW+Style.BRIGHT+"All files were encrypted successfully!")
 
 
                             
@@ -267,7 +268,7 @@ if check == True:
                                 all_dones = all_dones + str(done) + '\n'
 
        
-                            print("We got problems on following files:\n "+all_errors+"\n Check their permissions\n\n✅ The following files were encrypted successfully\n"+all_dones)
+                            print(Fore.RED+Back.YELLOW+Style.BRIGHT+"We got problems on following files:\n "+all_errors+"\n Check their permissions and password\n\n✅ In addition, the following files were encrypted successfully\n"+all_dones)
 
         elif sys.argv[1] == "--decrypt": 
             
@@ -276,7 +277,7 @@ if check == True:
             password = getpass.getpass("Type the password: ")
             
             while True:
-                answer = input("Keep Original? (Y/N): ").strip().upper()
+                answer = input("\n\nKeep Original file(s)? \nIf no, it will overwrite the file (be careful) (Y/N): ").strip().upper()
                 if answer in ("Y", "N"):
                     if answer == "Y":
                         keep_original = True
@@ -284,15 +285,15 @@ if check == True:
                         keep_original = False
                     break
                 else:
-                    print("Resposta inválida. Por favor, digite 'Y' para sim ou 'N' para não.")
+                    print(f"{Fore.YELLOW}Invalid answer. Please, type 'Y' or'N' ")
             
             import os
             if os.path.isfile(fullpath):
                 freturn = decrypt(password, fullpath, keep_original)
                 if freturn == True:
-                    print("File decrypted successfully!")
+                    print(Fore.GREEN+Back.YELLOW+Style.BRIGHT+"File decrypted successfully!")
                 else:
-                    print("Something went wrong. Check the path and file permissions")
+                    print(Fore.RED+Back.YELLOW+Style.BRIGHT+"Something went wrong. Check the path, password and file permissions")
             
             
             #It's a folder
@@ -303,7 +304,7 @@ if check == True:
                 #If 'isfile' fails, throw the 'else' (go here). So, if it's not a file, firstly check if the path to the supposed folder exists
                 if not os.path.exists(fullpath):
                     #It's not a file or folder
-                    print("This file or folder doesn't exists")
+                    print(Fore.RED+Back.YELLOW+Style.BRIGHT+"This file or folder doesn't exists")
 
                 else:
                     #Loop all folder content (will list subfolder, but will not enter on it. os.walk enter in subfolders) and run the crypt function on each file
@@ -311,7 +312,7 @@ if check == True:
                     
                     #Check if folder is empty
                     if folder_content == []:
-                        print("Folder is empty")
+                        print(Fore.RED+Back.YELLOW+Style.BRIGHT+"Folder is empty")
                     else:
                         #Loop
                         for item in folder_content:
@@ -329,7 +330,7 @@ if check == True:
                         
                         if len(error_list) == 0:                
                     
-                            print("All files were decrypted successfully!")
+                            print(Fore.GREEN+Back.YELLOW+Style.BRIGHT+"All files were decrypted successfully!")
 
 
                             
@@ -348,7 +349,7 @@ if check == True:
                                 all_dones = all_dones + str(done) + '\n'
 
        
-                            print("We got problems on following files:\n "+all_errors+"\n Check their permissions\n\n✅ The following files were decrypted successfully\n"+all_dones)
+                            print(Fore.RED+Back.YELLOW+Style.BRIGHT+"We got problems on following files:\n "+all_errors+"\n Check their permissions and password\n\n✅ In addition, the following files were decrypted successfully\n"+all_dones)
             
 
         #Not acceptable or malformed args
@@ -360,11 +361,3 @@ if check == True:
         print_help()
 else:
     print("Some libs could'n be imported. Install it mannualy via pip")
-
-
-
-
-    
-
-
-    
