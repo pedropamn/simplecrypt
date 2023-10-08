@@ -25,6 +25,8 @@
 <br />
 <div align="center">
   <img src="https://github.com/pedropamn/simplecrypt/blob/main/screen-simplecrypt.png?raw=true" width="60%" />
+    <img src="https://github.com/pedropamn/simplecrypt/blob/main/screen-simplecrypt-cli.png?raw=true" width="60%" />
+
 
 
 
@@ -50,7 +52,6 @@
 SimpleCrypt is a simple program that encrypt and decrypt any file with password using AES256-CBC, via [PyAesCrypt](https://pypi.org/project/pyAesCrypt/). You can encrypt a file or a entire folder with a password and protect your important ones!
 
 
-
 <br><br>
 
 
@@ -59,7 +60,11 @@ SimpleCrypt is a simple program that encrypt and decrypt any file with password 
 
 ## Installation
 
-* [Download from Releases section](https://github.com/pedropamn/simplecrypt/releases) 
+**GUI**:
+* [Download from Releases section](https://github.com/pedropamn/simplecrypt/releases)
+
+**CLI**:
+* Download Python 3 and run ```python3 simplecrypt-cli.py [--encrypt | --decrypt] /path/to/file_or_folder```
 ## Built with
 
 <img src="https://img.shields.io/badge/-Python-green?style=for-the-badge&logo=python&logoColor=white"></img>
@@ -71,11 +76,10 @@ SimpleCrypt is a simple program that encrypt and decrypt any file with password 
 <!-- ROADMAP -->
 ## Roadmap
 
-
+- [x] CLI version  
 - [ ] Make it Installable
 - [ ] Cloud Storage
 - [ ] Stats
-- [ ] CLI version  
 - [ ] New Algorithms
 - [ ] Increase compatibility (see Compatibility Notes below)
 
@@ -83,7 +87,7 @@ SimpleCrypt is a simple program that encrypt and decrypt any file with password 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- NOTES -->
-## Compatibility notes
+## Compatibility notes (for GUI)
 * <img src="https://img.shields.io/badge/-Windows-blue?style=for-the-badge&logo=windows&logoColor=white"></img>
   - Tested on Windows 10 and Windows 11. Not tested on 8 and 8.1, but it should work too. Windows 7 is not compatible (should not work on earlier versions)
 
