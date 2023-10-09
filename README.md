@@ -64,7 +64,9 @@ SimpleCrypt is a simple program that encrypt and decrypt any file with password 
 * [Download from Releases section](https://github.com/pedropamn/simplecrypt/releases)
 
 **CLI**:
-* Download Python 3 and run ```python3 simplecrypt-cli.py [--encrypt | --decrypt] /path/to/file_or_folder```
+* Download ```simplecrypt-cli.py``` and run ```python3 simplecrypt-cli.py [--encrypt | --decrypt] /path/to/file_or_folder```
+
+   For example: ```python3 simplecrypt-cli.py --encrypt /home/user/file.txt```
 ## Built with
 
 <img src="https://img.shields.io/badge/-Python-green?style=for-the-badge&logo=python&logoColor=white"></img>
